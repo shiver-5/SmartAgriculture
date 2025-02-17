@@ -21,7 +21,6 @@ const activeName = ref('first')
 
 const route = useRoute();
 const caseId = ref(route.params.id as string);
-console.log(caseId.value);
 
 watch(
   () => route.params.id,

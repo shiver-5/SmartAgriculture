@@ -6,12 +6,14 @@
       <div style="height:10px"></div>
       <div class="card-container">
         <el-card v-for="item in filteredData" :key="item.id" class="case-card"
-                 style="max-width: 480px; margin-bottom: 20px;" @click="handleViewDetail(item.id)">
+          style="max-width: 480px; margin-bottom: 20px;" @click="handleViewDetail(item.id)">
           <template #header>
             <div class="card-header">
               <span>{{ item.name }}</span>
+              <el-button class="evaluation-button" type="success" size="small" round @click.stop="handleEvaluation(item.id)">学习效果评估</el-button>
             </div>
           </template>
+
           <div class="card-content">
             <p><strong>主题：</strong>{{ item.theme }}</p>
             <p><strong>类型：</strong>{{ item.typ }}</p>
@@ -28,7 +30,7 @@
     </div>
     <!-- 新增/编辑弹窗 -->
     <el-dialog :title="isEdit ? '编辑' : '新增'" v-model="visible" width="700px" destroy-on-close
-               :close-on-click-modal="false" @close="closeDialog">
+      :close-on-click-modal="false" @close="closeDialog">
       <div>
         <el-form :model="formData" label-width="100px">
           <el-form-item label="案例名称">
@@ -105,10 +107,10 @@ onMounted(async () => {
 const filteredData = computed(() => {
   return tableData.value.filter(item => {
     return (
-        (!query.name || item.name.includes(query.name)) &&
-        (!query.typ || item.typ.includes(query.typ)) &&
-        (!query.theme || item.theme.includes(query.theme)) &&
-        (!query.keyword || item.keyword.some(kw => kw.includes(query.keyword)))
+      (!query.name || item.name.includes(query.name)) &&
+      (!query.typ || item.typ.includes(query.typ)) &&
+      (!query.theme || item.theme.includes(query.theme)) &&
+      (!query.keyword || item.keyword.some(kw => kw.includes(query.keyword)))
     );
   });
 });
@@ -196,6 +198,11 @@ const handleDelete = (id: number) => {
 const handleViewDetail = (id: number) => {
   router.push({ name: 'system-case-detail', params: { id: id.toString() } });
 };
+
+// 评估功能
+const handleEvaluation = (id: number) => {
+  router.push({ name: 'system-case-evaluation', params: { id: id.toString() } });
+};
 </script>
 
 <style scoped>
@@ -218,5 +225,25 @@ const handleViewDetail = (id: number) => {
 .card-footer {
   display: flex;
   justify-content: space-between;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 新增或追加至<style scoped>中 */
+.evaluation-button {
+  background: linear-gradient(135deg, #67C23A, #85CE61);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
+}
+
+.evaluation-button:hover {
+  background: linear-gradient(135deg, #85CE61, #67C23A);
 }
 </style>

@@ -29,8 +29,8 @@ export const menuData: Menus[] = [
                 id: '14',
                 pid: '1',
                 index: '/system-case',
-                title: '案例管理',
-            }
+                title: '课程管理',
+            },
         ],
     },
 ];

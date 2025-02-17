@@ -54,10 +54,20 @@ const routes: RouteRecordRaw[] = [
                 path: "/system-case",
                 name: "system-case",
                 meta: {
-                    title: "案例管理",
+                    title: "课程管理",
                     permiss: "14",
                 },
                 component: () => import(/* webpackChunkName: "system-case" */ "../views/system/case.vue"),
+            },
+            {
+                path: "/system-case/evaluation/:id",
+                name: "system-case-evaluation",
+                meta: {
+                    title: "学习效果评估",
+                    permiss: "14",
+                },
+                component: () => import(/* webpackChunkName: "system-learn-effect" */ "../views/system/case-evaluation.vue"),
+                props: true,
             },
             {
                 path: "/system-case/:id",
