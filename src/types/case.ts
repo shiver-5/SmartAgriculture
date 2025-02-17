@@ -4,4 +4,5 @@ export interface Case {
   theme: string;
   typ: string;
   keyword: Array<string>;
+  averageScore?: number;
 }
