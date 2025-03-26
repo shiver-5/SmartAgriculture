@@ -16,7 +16,7 @@
 
           <div class="card-content">
             <p><strong>主题：</strong>{{ item.theme }}</p>
-            <p><strong>类型：</strong>{{ item.typ }}</p>
+            <p><strong>分类：</strong>{{ item.typ }}</p>
             <p><strong>关键词：</strong>{{ item.keyword.join(', ') }}</p>
           </div>
           <template #footer>
@@ -33,14 +33,14 @@
       :close-on-click-modal="false" @close="closeDialog">
       <div>
         <el-form :model="formData" label-width="100px">
-          <el-form-item label="案例名称">
-            <el-input v-model="formData.name" placeholder="请输入案例名称"></el-input>
+          <el-form-item label="课程名称">
+            <el-input v-model="formData.name" placeholder="请输入课程名称"></el-input>
           </el-form-item>
-          <el-form-item label="案例类型">
-            <el-input v-model="formData.typ" placeholder="请输入案例类型"></el-input>
+          <el-form-item label="课程分类">
+            <el-input v-model="formData.typ" placeholder="请输入课程分类"></el-input>
           </el-form-item>
-          <el-form-item label="案例主题">
-            <el-input v-model="formData.theme" placeholder="请输入案例主题"></el-input>
+          <el-form-item label="课程主题">
+            <el-input v-model="formData.theme" placeholder="请输入课程主题"></el-input>
           </el-form-item>
           <el-form-item label="关键词">
             <el-input v-model="formData.keyword" placeholder="请输入关键词（用逗号分隔）"></el-input>
@@ -77,9 +77,9 @@ const query = reactive({
 });
 
 const searchOpt = ref([
-  { type: 'input', label: '案例名称：', prop: 'name' },
-  { type: 'input', label: '案例类型：', prop: 'typ' },
-  { type: 'input', label: '案例主题：', prop: 'theme' },
+  { type: 'input', label: '课程名称：', prop: 'name' },
+  { type: 'input', label: '课程分类：', prop: 'typ' },
+  { type: 'input', label: '课程主题：', prop: 'theme' },
   { type: 'input', label: '关键词：', prop: 'keyword' },
 ]);
 
@@ -170,7 +170,7 @@ const saveData = () => {
 
   if (isEdit.value) {
     caseStore.editCase(newCase as Case);
-    ElMessage.success('案例已更新');
+    ElMessage.success('课程已更新');
   } else {
     caseStore.addCase(newCase as Case);
     ElMessage.success('新增成功');

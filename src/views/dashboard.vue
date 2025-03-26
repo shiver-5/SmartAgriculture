@@ -4,11 +4,11 @@
       <el-col :span="6">
         <el-card shadow="hover" body-class="card-body">
           <el-icon class="card-icon bg3">
-            <Goods />
+            <School />
           </el-icon>
           <div class="card-content">
             <countup class="card-num color3" :end="500" />
-            <div>案例使用量</div>
+            <div>课程使用量</div>
           </div>
         </el-card>
       </el-col>
@@ -37,8 +37,8 @@
       <el-col :span="12">
         <el-card shadow="hover" :body-style="{ height: '400px'}">
           <div class="card-header">
-            <p class="card-header-title">热门案例排行榜</p>
-            <p class="card-header-desc">使用最频繁的案例Top5</p>
+            <p class="card-header-title">热门课程排行榜</p>
+            <p class="card-header-desc">使用最频繁的课程Top5</p>
           </div>
           <div>
             <div class="rank-item" v-for="(rank, index) in ranks" :key="index">
@@ -74,6 +74,7 @@ import { CanvasRenderer } from 'echarts/renderers';
 import VChart from 'vue-echarts';
 import chinaMap from '@/utils/china';
 import { ref } from 'vue';
+import { School } from '@element-plus/icons-vue';
 use([
   CanvasRenderer,
   BarChart,
@@ -90,32 +91,32 @@ registerMap('china', chinaMap);
 
 const ranks = [
   {
-    name: '智慧农业监控系统',
-    theme: '科技',
+    name: '计算机编程基础',
+    theme: '信息技术',
     percent: 80,
     color: '#f25e43',
   },
   {
-    name: '无人机巡检与监测',
-    theme: '案例',
+    name: '农业大数据与智能分析',
+    theme: '农业与人工智能',
     percent: 70,
     color: '#00bcd4',
   },
   {
     name: '智慧灌溉系统',
-    theme: '教育',
+    theme: '农业物联网',
     percent: 60,
     color: '#64d572',
   },
   {
-    name: '精准农业',
-    theme: '科技',
+    name: '数据库原理',
+    theme: '信息技术',
     percent: 55,
     color: '#e9a745',
   },
   {
-    name: '农业风险预测系统',
-    theme: '环境',
+    name: '农业信息技术融合',
+    theme: '信息技术与农业',
     percent: 50,
     color: '#009688',
   },
@@ -198,7 +199,7 @@ const activityStats = ref({
 }
 
 .color3 {
-  color: #f25e43;
+  color: #ec2e0c;
 }
 
 .color4 {

@@ -34,9 +34,9 @@ const tabs = useTabsStore();
 }
 .content-box {
     position: absolute;
-    left: 250px;
+    left: 190px;
     right: 0;
-    top: 70px;
+    top: 55px;
     bottom: 0;
     padding-bottom: 30px;
     -webkit-transition: left 0.3s ease-in-out;
@@ -48,9 +48,13 @@ const tabs = useTabsStore();
 .content {
     width: auto;
     height: 100%;
-    padding: 20px;
+    padding: 15px;
     overflow-y: scroll;
     box-sizing: border-box;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: #fff;
+    max-height: 97%;
 }
 
 .content::-webkit-scrollbar {
@@ -58,6 +62,6 @@ const tabs = useTabsStore();
 }
 
 .content-collapse {
-    left: 65px;
+    left: 70px;
 }
 </style>

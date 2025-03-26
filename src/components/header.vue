@@ -2,8 +2,7 @@
     <div class="header">
         <!-- 折叠按钮 -->
         <div class="header-left">
-            <img class="logo" src="../assets/img/logo.svg" alt="" />
-            <div class="web-title">交叉学科专业课程学习效果评估系统</div>
+            <!-- <img class="logo" src="../assets/img/logo.svg" alt="" /> -->
             <div class="collapse-btn" @click="collapseChage">
                 <el-icon v-if="sidebar.collapse">
                     <Expand />
@@ -12,14 +11,10 @@
                     <Fold />
                 </el-icon>
             </div>
+            <div class="web-title">交叉学科专业课程学习效果评估系统</div>
         </div>
         <div class="header-right">
-            <div class="header-user-con">
-                <div class="btn-icon" @click="setFullScreen">
-                    <el-tooltip effect="dark" content="全屏" placement="bottom">
-                        <i class="el-icon-lx-full"></i>
-                    </el-tooltip>
-                </div>
+            <div class="header-user-icon">
                 <!-- 用户头像 -->
                 <el-avatar class="user-avator" :size="30" :src="imgurl" />
                 <!-- 用户名下拉菜单 -->
@@ -37,6 +32,11 @@
                         </el-dropdown-menu>
                     </template>
                 </el-dropdown>
+            </div>
+            <div class="btn-icon" @click="setFullScreen">
+                <el-tooltip effect="dark" content="全屏" placement="bottom">
+                    <i class="el-icon-lx-full"></i>
+                </el-tooltip>
             </div>
         </div>
     </div>
@@ -87,27 +87,29 @@ const setFullScreen = () => {
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    width: 100%;
-    height: 70px;
+    max-width: 100%;
+    height: 40px;
     color: var(--header-text-color);
-    background-color: var(--header-bg-color);
-    border-bottom: 1px solid #ddd;
+    background-color: rgba(206, 206, 206, 0.7);
+    border-bottom: 1px solid #f6f6f9;
+    border-radius: 10px;
+    margin: 5px;
+    padding-right: 20px;
 }
 
 .header-left {
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    padding-left: 10px;
     height: 100%;
 }
 
 .logo {
-    width: 35px;
+    width: 60px;
 }
 
 .web-title {
-    margin: 0 40px 0 10px;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .collapse-btn {
@@ -118,7 +120,7 @@ const setFullScreen = () => {
     padding: 0 10px;
     cursor: pointer;
     opacity: 0.8;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 .collapse-btn:hover {
@@ -126,33 +128,33 @@ const setFullScreen = () => {
 }
 
 .header-right {
-    float: right;
-    padding-right: 50px;
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
 }
 
-.header-user-con {
+.header-user-icon {
     display: flex;
-    height: 70px;
+    height: 40px;
     align-items: center;
+    margin-right: 15px;
 }
 
 .btn-fullscreen {
     transform: rotate(45deg);
-    margin-right: 5px;
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .btn-icon {
     position: relative;
-    width: 30px;
+    width: 15px;
     height: 30px;
     text-align: center;
     cursor: pointer;
     display: flex;
     align-items: center;
     color: var(--header-text-color);
-    margin: 0 5px;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .btn-bell-badge {
@@ -162,7 +164,7 @@ const setFullScreen = () => {
     width: 8px;
     height: 8px;
     border-radius: 4px;
-    background: #f56c6c;
+    background: #58a6d3;
     color: var(--header-text-color);
 }
 

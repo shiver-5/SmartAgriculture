@@ -73,7 +73,7 @@ const routes: RouteRecordRaw[] = [
                 path: "/system-case/:id",
                 name: "system-case-detail",
                 meta: {
-                    title: "案例详情",
+                    title: "课程详情",
                     permiss: "14",
                 },
                 component: () => import(/* webpackChunkName: "system-case-detail" */ "../views/system/case-detail.vue"),

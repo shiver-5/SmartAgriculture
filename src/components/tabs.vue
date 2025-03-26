@@ -110,7 +110,7 @@ watch(
     position: relative;
     overflow: hidden;
     background: #fff;
-    padding: 2px 120px 0 0;
+    padding: 2px 10px 0 0;
 }
 
 .tabs {
@@ -144,5 +144,6 @@ watch(
     background: #fff;
     box-shadow: -3px 0 15px 3px rgba(0, 0, 0, 0.1);
     z-index: 10;
+    font-size: 10px;
 }
 </style>

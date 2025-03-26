@@ -81,7 +81,7 @@ i {
 }
 
 :root {
-	--header-bg-color: #242f42;
-	--header-text-color: #fff;
+	--header-bg-color: #567ce6;
+	--header-text-color: #0c0315;
 	--active-color: var(--el-color-primary);
 }
